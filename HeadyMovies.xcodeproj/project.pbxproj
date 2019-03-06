@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0066B9E222EA7EA00B62F9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066B9D222EA7EA00B62F9E /* AppDelegate.swift */; };
+		D0066BA3222EA7EA00B62F9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0066BA1222EA7EA00B62F9E /* Main.storyboard */; };
+		D0066BA5222EA7EC00B62F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0066BA4222EA7EC00B62F9E /* Assets.xcassets */; };
+		D0066BA8222EA7EC00B62F9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0066BA6222EA7EC00B62F9E /* LaunchScreen.storyboard */; };
+		D0066BB3222EA7EC00B62F9E /* HeadyMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066BB2222EA7EC00B62F9E /* HeadyMoviesTests.swift */; };
+		D0066BBE222EA7EC00B62F9E /* HeadyMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066BBD222EA7EC00B62F9E /* HeadyMoviesUITests.swift */; };
+		D0E76B7A222F9339001456A3 /* MoviesHomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0066BAF222EA7EC00B62F9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0066B92222EA7EA00B62F9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0066B99222EA7EA00B62F9E;
+			remoteInfo = HeadyMovies;
+		};
+		D0066BBA222EA7EC00B62F9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0066B92222EA7EA00B62F9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0066B99222EA7EA00B62F9E;
+			remoteInfo = HeadyMovies;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0066B9A222EA7EA00B62F9E /* HeadyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0066B9D222EA7EA00B62F9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0066BA2222EA7EA00B62F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0066BA4222EA7EC00B62F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0066BA7222EA7EC00B62F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0066BA9222EA7EC00B62F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0066BAE222EA7EC00B62F9E /* HeadyMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadyMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0066BB2222EA7EC00B62F9E /* HeadyMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadyMoviesTests.swift; sourceTree = "<group>"; };
+		D0066BB4222EA7EC00B62F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0066BB9222EA7EC00B62F9E /* HeadyMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadyMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0066BBD222EA7EC00B62F9E /* HeadyMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadyMoviesUITests.swift; sourceTree = "<group>"; };
+		D0066BBF222EA7EC00B62F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesHomeScreenController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0066B97222EA7EA00B62F9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0066BAB222EA7EC00B62F9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0066BB6222EA7EC00B62F9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0066B91222EA7EA00B62F9E = {
+			isa = PBXGroup;
+			children = (
+				D0066B9C222EA7EA00B62F9E /* HeadyMovies */,
+				D0066BB1222EA7EC00B62F9E /* HeadyMoviesTests */,
+				D0066BBC222EA7EC00B62F9E /* HeadyMoviesUITests */,
+				D0066B9B222EA7EA00B62F9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0066B9B222EA7EA00B62F9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0066B9A222EA7EA00B62F9E /* HeadyMovies.app */,
+				D0066BAE222EA7EC00B62F9E /* HeadyMoviesTests.xctest */,
+				D0066BB9222EA7EC00B62F9E /* HeadyMoviesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0066B9C222EA7EA00B62F9E /* HeadyMovies */ = {
+			isa = PBXGroup;
+			children = (
+				D0066B9D222EA7EA00B62F9E /* AppDelegate.swift */,
+				D0066BA1222EA7EA00B62F9E /* Main.storyboard */,
+				D0066BCE222EA81E00B62F9E /* View-Model */,
+				D0066BCD222EA81800B62F9E /* View */,
+				D0066BCC222EA80D00B62F9E /* Model */,
+				D0066BCF222EA86500B62F9E /* Helpers */,
+				D0066BCB222EA7F800B62F9E /* Supporting Files */,
+			);
+			path = HeadyMovies;
+			sourceTree = "<group>";
+		};
+		D0066BB1222EA7EC00B62F9E /* HeadyMoviesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0066BB2222EA7EC00B62F9E /* HeadyMoviesTests.swift */,
+				D0066BB4222EA7EC00B62F9E /* Info.plist */,
+			);
+			path = HeadyMoviesTests;
+			sourceTree = "<group>";
+		};
+		D0066BBC222EA7EC00B62F9E /* HeadyMoviesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0066BBD222EA7EC00B62F9E /* HeadyMoviesUITests.swift */,
+				D0066BBF222EA7EC00B62F9E /* Info.plist */,
+			);
+			path = HeadyMoviesUITests;
+			sourceTree = "<group>";
+		};
+		D0066BCB222EA7F800B62F9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0066BA4222EA7EC00B62F9E /* Assets.xcassets */,
+				D0066BA6222EA7EC00B62F9E /* LaunchScreen.storyboard */,
+				D0066BA9222EA7EC00B62F9E /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0066BCC222EA80D00B62F9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0066BCD222EA81800B62F9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0E76B78222F9303001456A3 /* Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0066BCE222EA81E00B62F9E /* View-Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		D0066BCF222EA86500B62F9E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D0E76B78222F9303001456A3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0066B99222EA7EA00B62F9E /* HeadyMovies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0066BC2222EA7EC00B62F9E /* Build configuration list for PBXNativeTarget "HeadyMovies" */;
+			buildPhases = (
+				D0066B96222EA7EA00B62F9E /* Sources */,
+				D0066B97222EA7EA00B62F9E /* Frameworks */,
+				D0066B98222EA7EA00B62F9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeadyMovies;
+			productName = HeadyMovies;
+			productReference = D0066B9A222EA7EA00B62F9E /* HeadyMovies.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0066BAD222EA7EC00B62F9E /* HeadyMoviesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0066BC5222EA7EC00B62F9E /* Build configuration list for PBXNativeTarget "HeadyMoviesTests" */;
+			buildPhases = (
+				D0066BAA222EA7EC00B62F9E /* Sources */,
+				D0066BAB222EA7EC00B62F9E /* Frameworks */,
+				D0066BAC222EA7EC00B62F9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0066BB0222EA7EC00B62F9E /* PBXTargetDependency */,
+			);
+			name = HeadyMoviesTests;
+			productName = HeadyMoviesTests;
+			productReference = D0066BAE222EA7EC00B62F9E /* HeadyMoviesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0066BB8222EA7EC00B62F9E /* HeadyMoviesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0066BC8222EA7EC00B62F9E /* Build configuration list for PBXNativeTarget "HeadyMoviesUITests" */;
+			buildPhases = (
+				D0066BB5222EA7EC00B62F9E /* Sources */,
+				D0066BB6222EA7EC00B62F9E /* Frameworks */,
+				D0066BB7222EA7EC00B62F9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0066BBB222EA7EC00B62F9E /* PBXTargetDependency */,
+			);
+			name = HeadyMoviesUITests;
+			productName = HeadyMoviesUITests;
+			productReference = D0066BB9222EA7EC00B62F9E /* HeadyMoviesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0066B92222EA7EA00B62F9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Sharad S. Chauhan";
+				TargetAttributes = {
+					D0066B99222EA7EA00B62F9E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					D0066BAD222EA7EC00B62F9E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D0066B99222EA7EA00B62F9E;
+					};
+					D0066BB8222EA7EC00B62F9E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D0066B99222EA7EA00B62F9E;
+					};
+				};
+			};
+			buildConfigurationList = D0066B95222EA7EA00B62F9E /* Build configuration list for PBXProject "HeadyMovies" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0066B91222EA7EA00B62F9E;
+			productRefGroup = D0066B9B222EA7EA00B62F9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0066B99222EA7EA00B62F9E /* HeadyMovies */,
+				D0066BAD222EA7EC00B62F9E /* HeadyMoviesTests */,
+				D0066BB8222EA7EC00B62F9E /* HeadyMoviesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0066B98222EA7EA00B62F9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0066BA8222EA7EC00B62F9E /* LaunchScreen.storyboard in Resources */,
+				D0066BA5222EA7EC00B62F9E /* Assets.xcassets in Resources */,
+				D0066BA3222EA7EA00B62F9E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0066BAC222EA7EC00B62F9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0066BB7222EA7EC00B62F9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0066B96222EA7EA00B62F9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E76B7A222F9339001456A3 /* MoviesHomeScreenController.swift in Sources */,
+				D0066B9E222EA7EA00B62F9E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0066BAA222EA7EC00B62F9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0066BB3222EA7EC00B62F9E /* HeadyMoviesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0066BB5222EA7EC00B62F9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0066BBE222EA7EC00B62F9E /* HeadyMoviesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0066BB0222EA7EC00B62F9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0066B99222EA7EA00B62F9E /* HeadyMovies */;
+			targetProxy = D0066BAF222EA7EC00B62F9E /* PBXContainerItemProxy */;
+		};
+		D0066BBB222EA7EC00B62F9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0066B99222EA7EA00B62F9E /* HeadyMovies */;
+			targetProxy = D0066BBA222EA7EC00B62F9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0066BA1222EA7EA00B62F9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0066BA2222EA7EA00B62F9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0066BA6222EA7EC00B62F9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0066BA7222EA7EC00B62F9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0066BC0222EA7EC00B62F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0066BC1222EA7EC00B62F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0066BC3222EA7EC00B62F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HeadyMovies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMovies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0066BC4222EA7EC00B62F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HeadyMovies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMovies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D0066BC6222EA7EC00B62F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HeadyMoviesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadyMovies.app/HeadyMovies";
+			};
+			name = Debug;
+		};
+		D0066BC7222EA7EC00B62F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HeadyMoviesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeadyMovies.app/HeadyMovies";
+			};
+			name = Release;
+		};
+		D0066BC9222EA7EC00B62F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HeadyMoviesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMoviesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HeadyMovies;
+			};
+			name = Debug;
+		};
+		D0066BCA222EA7EC00B62F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HeadyMoviesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMoviesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HeadyMovies;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0066B95222EA7EA00B62F9E /* Build configuration list for PBXProject "HeadyMovies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0066BC0222EA7EC00B62F9E /* Debug */,
+				D0066BC1222EA7EC00B62F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0066BC2222EA7EC00B62F9E /* Build configuration list for PBXNativeTarget "HeadyMovies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0066BC3222EA7EC00B62F9E /* Debug */,
+				D0066BC4222EA7EC00B62F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0066BC5222EA7EC00B62F9E /* Build configuration list for PBXNativeTarget "HeadyMoviesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0066BC6222EA7EC00B62F9E /* Debug */,
+				D0066BC7222EA7EC00B62F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0066BC8222EA7EC00B62F9E /* Build configuration list for PBXNativeTarget "HeadyMoviesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0066BC9222EA7EC00B62F9E /* Debug */,
+				D0066BCA222EA7EC00B62F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0066B92222EA7EA00B62F9E /* Project object */;
+}
