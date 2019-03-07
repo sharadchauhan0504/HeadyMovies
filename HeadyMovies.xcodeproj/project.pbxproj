@@ -13,7 +13,14 @@
 		D0066BA8222EA7EC00B62F9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0066BA6222EA7EC00B62F9E /* LaunchScreen.storyboard */; };
 		D0066BB3222EA7EC00B62F9E /* HeadyMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066BB2222EA7EC00B62F9E /* HeadyMoviesTests.swift */; };
 		D0066BBE222EA7EC00B62F9E /* HeadyMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066BBD222EA7EC00B62F9E /* HeadyMoviesUITests.swift */; };
+		D0DB068B2231302C0040AB16 /* MoviesHomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DB068A2231302C0040AB16 /* MoviesHomeScreenViewModel.swift */; };
+		D0DB068E223131AD0040AB16 /* PopularMoviesCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DB068D223131AD0040AB16 /* PopularMoviesCodable.swift */; };
 		D0E76B7A222F9339001456A3 /* MoviesHomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */; };
+		D0E76B7E222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B7C222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift */; };
+		D0E76B7F222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E76B7D222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib */; };
+		D0E76B84222FE675001456A3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B83222FE675001456A3 /* Configuration.swift */; };
+		D0E76B86222FEBA6001456A3 /* NetworkOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B85222FEBA6001456A3 /* NetworkOperations.swift */; };
+		D0E76B88222FEBCE001456A3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B87222FEBCE001456A3 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +53,14 @@
 		D0066BB9222EA7EC00B62F9E /* HeadyMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadyMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0066BBD222EA7EC00B62F9E /* HeadyMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadyMoviesUITests.swift; sourceTree = "<group>"; };
 		D0066BBF222EA7EC00B62F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0DB068A2231302C0040AB16 /* MoviesHomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesHomeScreenViewModel.swift; sourceTree = "<group>"; };
+		D0DB068D223131AD0040AB16 /* PopularMoviesCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesCodable.swift; sourceTree = "<group>"; };
 		D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesHomeScreenController.swift; sourceTree = "<group>"; };
+		D0E76B7C222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesHomeScreenCollectionCell.swift; sourceTree = "<group>"; };
+		D0E76B7D222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesHomeScreenCollectionCell.xib; sourceTree = "<group>"; };
+		D0E76B83222FE675001456A3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D0E76B85222FEBA6001456A3 /* NetworkOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperations.swift; sourceTree = "<group>"; };
+		D0E76B87222FEBCE001456A3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +153,7 @@
 		D0066BCC222EA80D00B62F9E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0DB068C223131850040AB16 /* Codables */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +161,7 @@
 		D0066BCD222EA81800B62F9E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0E76B7B222FD847001456A3 /* CollectionCells */,
 				D0E76B78222F9303001456A3 /* Controllers */,
 			);
 			path = View;
@@ -154,6 +170,7 @@
 		D0066BCE222EA81E00B62F9E /* View-Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0DB068A2231302C0040AB16 /* MoviesHomeScreenViewModel.swift */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -161,8 +178,19 @@
 		D0066BCF222EA86500B62F9E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D0E76B82222FE659001456A3 /* Config */,
+				D0E76B81222FE4EE001456A3 /* NetworkOperation */,
+				D0E76B80222FE11B001456A3 /* Extensions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D0DB068C223131850040AB16 /* Codables */ = {
+			isa = PBXGroup;
+			children = (
+				D0DB068D223131AD0040AB16 /* PopularMoviesCodable.swift */,
+			);
+			path = Codables;
 			sourceTree = "<group>";
 		};
 		D0E76B78222F9303001456A3 /* Controllers */ = {
@@ -171,6 +199,39 @@
 				D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D0E76B7B222FD847001456A3 /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				D0E76B7C222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift */,
+				D0E76B7D222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		D0E76B80222FE11B001456A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0E76B87222FEBCE001456A3 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0E76B81222FE4EE001456A3 /* NetworkOperation */ = {
+			isa = PBXGroup;
+			children = (
+				D0E76B85222FEBA6001456A3 /* NetworkOperations.swift */,
+			);
+			path = NetworkOperation;
+			sourceTree = "<group>";
+		};
+		D0E76B82222FE659001456A3 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D0E76B83222FE675001456A3 /* Configuration.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +341,7 @@
 				D0066BA8222EA7EC00B62F9E /* LaunchScreen.storyboard in Resources */,
 				D0066BA5222EA7EC00B62F9E /* Assets.xcassets in Resources */,
 				D0066BA3222EA7EA00B62F9E /* Main.storyboard in Resources */,
+				D0E76B7F222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +367,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E76B7A222F9339001456A3 /* MoviesHomeScreenController.swift in Sources */,
+				D0DB068B2231302C0040AB16 /* MoviesHomeScreenViewModel.swift in Sources */,
+				D0E76B86222FEBA6001456A3 /* NetworkOperations.swift in Sources */,
 				D0066B9E222EA7EA00B62F9E /* AppDelegate.swift in Sources */,
+				D0E76B84222FE675001456A3 /* Configuration.swift in Sources */,
+				D0DB068E223131AD0040AB16 /* PopularMoviesCodable.swift in Sources */,
+				D0E76B88222FEBCE001456A3 /* UIViewExtensions.swift in Sources */,
+				D0E76B7E222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,16 +548,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HeadyMovies/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/HeadyMovies/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -497,16 +568,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HeadyMovies/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/HeadyMovies/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharad.HeadyMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
