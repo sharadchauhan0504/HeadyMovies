@@ -103,6 +103,15 @@ class MoviesHomeScreenController: UIViewController {
         callPopularMoviesAPI(pageCount: currentPageCount)
     }
     
+    @IBAction func openSortViewButtonAction(_ sender: UIButton) {
+        let customPopUpView = CustomFilterPopUpView(frame: view.frame)
+        view.addSubview(customPopUpView)
+    }
+    
+    @IBAction func searchButtonAction(_ sender: UIButton) {
+        
+    }
+    
     private func navigateToMovieDetails(movieDetails: PopularMoviesResult) {
         let movieDetailScreenController          = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailScreenController") as! MovieDetailScreenController
         movieDetailScreenController.movieDetails = movieDetails
@@ -141,7 +150,7 @@ extension MoviesHomeScreenController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = movieGridCollectionView.cellForItem(at: indexPath) as? MoviesHomeScreenCollectionCell {
             cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.1, options: [.curveEaseIn, .allowUserInteraction], animations: {
+            UIView.animate(withDuration: 0.25, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.1, options: [.curveEaseIn, .allowUserInteraction], animations: {
                 cell.transform = .identity
             }, completion: { (success) in
                 if let popularMoviesDictionary = self.popularMovies  {

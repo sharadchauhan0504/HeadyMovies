@@ -28,17 +28,35 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="15" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWv-f8-WBb">
+                                                <rect key="frame" x="15" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bWv-f8-WBb" secondAttribute="height" multiplier="1:1" id="ktV-B9-MT9"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="openSortViewButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JN5-JS-3m3"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeadyMovies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9X-Ua-NCA">
                                                 <rect key="frame" x="122.66666666666669" y="10.666666666666664" width="130" height="29"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6U-68-TQ0">
+                                                <rect key="frame" x="310" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="g6U-68-TQ0" secondAttribute="height" multiplier="1:1" id="773-5n-4W6"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="searchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXH-VH-sSw"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGt-c9-pQh" userLabel="Right Padding">
                                                 <rect key="frame" x="360" y="0.0" width="15" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJ9-5u-U2u">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJ9-5u-U2u" userLabel="LineView">
                                                 <rect key="frame" x="5" y="49" width="365" height="1"/>
                                                 <color key="backgroundColor" red="0.34509803921568627" green="0.40392156862745099" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -53,14 +71,20 @@
                                             <constraint firstItem="bJ9-5u-U2u" firstAttribute="width" secondItem="ps0-4B-lsg" secondAttribute="width" multiplier="365:375" id="EBw-q5-0Ot"/>
                                             <constraint firstItem="p9X-Ua-NCA" firstAttribute="centerX" secondItem="ps0-4B-lsg" secondAttribute="centerX" id="Iuf-K5-Nva"/>
                                             <constraint firstItem="bJ9-5u-U2u" firstAttribute="centerX" secondItem="ps0-4B-lsg" secondAttribute="centerX" id="Iv4-X2-1z3"/>
+                                            <constraint firstAttribute="bottom" secondItem="g6U-68-TQ0" secondAttribute="bottom" id="Kze-cF-E8G"/>
+                                            <constraint firstItem="bWv-f8-WBb" firstAttribute="top" secondItem="ps0-4B-lsg" secondAttribute="top" id="Tbu-n1-4Lz"/>
                                             <constraint firstAttribute="bottom" secondItem="bJ9-5u-U2u" secondAttribute="bottom" id="Uta-5X-WKu"/>
                                             <constraint firstItem="rGt-c9-pQh" firstAttribute="top" secondItem="ps0-4B-lsg" secondAttribute="top" id="beW-yb-UGV"/>
                                             <constraint firstItem="p9X-Ua-NCA" firstAttribute="centerY" secondItem="ps0-4B-lsg" secondAttribute="centerY" id="cgj-E1-A4D"/>
+                                            <constraint firstItem="rGt-c9-pQh" firstAttribute="leading" secondItem="g6U-68-TQ0" secondAttribute="trailing" id="dh4-Dd-K1E"/>
+                                            <constraint firstItem="bWv-f8-WBb" firstAttribute="leading" secondItem="iVe-mQ-ezc" secondAttribute="trailing" id="ehq-CY-YTv"/>
                                             <constraint firstItem="iVe-mQ-ezc" firstAttribute="width" secondItem="ps0-4B-lsg" secondAttribute="width" multiplier="15:375" id="hWi-Vy-yHI"/>
+                                            <constraint firstItem="g6U-68-TQ0" firstAttribute="top" secondItem="ps0-4B-lsg" secondAttribute="top" id="hyX-ig-BDV"/>
                                             <constraint firstAttribute="bottom" secondItem="iVe-mQ-ezc" secondAttribute="bottom" id="msO-dZ-KSP"/>
                                             <constraint firstItem="iVe-mQ-ezc" firstAttribute="top" secondItem="ps0-4B-lsg" secondAttribute="top" id="pSb-wl-Xq4"/>
                                             <constraint firstItem="rGt-c9-pQh" firstAttribute="width" secondItem="iVe-mQ-ezc" secondAttribute="width" id="qDi-8l-Q3g"/>
                                             <constraint firstItem="iVe-mQ-ezc" firstAttribute="leading" secondItem="ps0-4B-lsg" secondAttribute="leading" id="ty2-9N-5Z5"/>
+                                            <constraint firstAttribute="bottom" secondItem="bWv-f8-WBb" secondAttribute="bottom" id="xRK-aT-Nyx"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-Bb-90q" userLabel="Search Field Container View">
