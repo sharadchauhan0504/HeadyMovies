@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W32-ah-ctL" userLabel="Content Container View">
                                 <rect key="frame" x="2" y="5" width="146" height="240"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-Ni-sq8">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-Ni-sq8" customClass="ImageDownloader" customModule="HeadyMovies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="240"/>
                                     </imageView>
                                 </subviews>

@@ -32,6 +32,7 @@ struct PopularMoviesResult: Codable {
     let posterPath: String
     let overview: String
     let releaseDate: String
+    let backDropPath: String
     
     private enum CodingKeys: String, CodingKey {
         case voteCount = "vote_count"
@@ -42,5 +43,6 @@ struct PopularMoviesResult: Codable {
         case posterPath = "poster_path"
         case overview
         case releaseDate = "release_date"
+        case backDropPath = "backdrop_path"
     }
 }

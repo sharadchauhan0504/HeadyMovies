@@ -12,18 +12,41 @@ class MoviesHomeScreenViewModel {
     
     let networkOperations = NetworkOperations()
     
+    var popularMoviesSuccessCallBack: ((PopularMovies) -> Void)?
+    var popularMoviesFailureCallBack: (() -> Void)?
+    
     func getMoviesFromServerToParse(pageNumber: Int) {
         networkOperations.fetchPopularMovies(pageNumber: pageNumber)
         
         networkOperations.popularMoviesResponseCallback = { [weak self] (responseData, success) in
-            do {
-                let decoder = JSONDecoder()
-                let results = try decoder.decode(PopularMovies.self, from: responseData)
-                print("Result: \(results.results)")
-            } catch {
-                print(error)
-            }
-            
+            guard let weakSelf = self else {return}
+            if success {
+                do {
+                    let decoder = JSONDecoder()
+                    let results = try decoder.decode(PopularMovies.self, from: responseData)
+                    if let callBack = weakSelf.popularMoviesSuccessCallBack {
+                        callBack(results)
+                    }
+                } catch {
+                    print(error)
+                }
+            } else {
+                if let callBack = weakSelf.popularMoviesFailureCallBack {
+                    callBack()
+                }
+            }            
         }
+    }
+    
+    func getMoviesSortedByPopularity(moviesArray: [PopularMoviesResult]) -> [PopularMoviesResult] {
+        return moviesArray.sorted(by: { (p1, p2) -> Bool in
+            return p1.popularity > p2.popularity
+        })
+    }
+    
+    func getMoviesSortedByRating(moviesArray: [PopularMoviesResult]) -> [PopularMoviesResult] {
+        return moviesArray.sorted(by: { (p1, p2) -> Bool in
+            return p1.voteAverage > p2.voteAverage
+        })
     }
 }
