@@ -15,11 +15,19 @@ class MoviesHomeScreenController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextShadowView: UIView!
     @IBOutlet weak var previousShadowView: UIView!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var heightConstraintSearchContainer: NSLayoutConstraint!
+    @IBOutlet weak var searchButton: UIButton!
     
-    var visibleIndexPaths = [IndexPath]()
-    var currentPageCount = 1
+    var visibleIndexPaths              = [IndexPath]()
+    var currentPageCount               = 1
     var popularMovies: PopularMovies?
-    let moviesHomeScreenViewModel = MoviesHomeScreenViewModel()
+    var operatedPopularMovies          = [PopularMoviesResult]()
+    var searchedMovies                 = [PopularMoviesResult]()
+    let moviesHomeScreenViewModel      = MoviesHomeScreenViewModel()
+    var selectedSortFilter: SortFilter = .kNone
+    var activityIndicator              = UIActivityIndicatorView(style: .whiteLarge)
+    var isSearchOn                     = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +38,12 @@ class MoviesHomeScreenController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         view.addGradientWithColor(firstColor: UIColor(red:0.26, green:0.26, blue:0.26, alpha:1.0), secondColor: UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0))
-        
     }
     
     private func initialSetup() {
+        
+        searchTextField.delegate = self
+        
         let moviesHomeScreenCollectionCell   = UINib(nibName: "MoviesHomeScreenCollectionCell", bundle: nil)
         movieGridCollectionView.register(moviesHomeScreenCollectionCell, forCellWithReuseIdentifier: "MoviesHomeScreenCollectionCell")
         movieGridCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -47,24 +57,68 @@ class MoviesHomeScreenController: UIViewController {
         nextButton.layer.cornerRadius        = nextButton.bounds.width * 0.5
         nextButton.layer.masksToBounds       = true
         nextShadowView.addShadowToView(radius: nextButton.bounds.width * 0.5)
+        
+        hideNextPreviousButton()
     }
     
     private func callPopularMoviesAPI(pageCount: Int) {
+        addActivityIndicator()
         moviesHomeScreenViewModel.getMoviesFromServerToParse(pageNumber: pageCount)
         
         moviesHomeScreenViewModel.popularMoviesSuccessCallBack = { [weak self] popularMovies in
             guard let weakSelf = self else {return}
             DispatchQueue.main.async {
+                weakSelf.removeActivityIndicator()
                 weakSelf.popularMovies = popularMovies
-                weakSelf.movieGridCollectionView.reloadData()
+                weakSelf.operateServerData()
                 weakSelf.showNextPreviousButton()
             }
         }
         
         moviesHomeScreenViewModel.popularMoviesFailureCallBack = { [weak self] in
-            guard let _ = self else {return}
+            guard let weakSelf = self else {return}
+            DispatchQueue.main.async {
+                weakSelf.removeActivityIndicator()
+            }
+        }
+    }
+    
+    private func callSearchAPI(searchText: String) {
+        let searchString = searchText.replacingOccurrences(of: " ", with: "+")
+        addActivityIndicator()
+        isSearchOn = true
+        moviesHomeScreenViewModel.searchMoviesFromServerToParse(searchString: searchString)
+        
+        moviesHomeScreenViewModel.searchMoviesSuccessCallBack = { [weak self] popularMovies in
+            guard let weakSelf = self else {return}
+            DispatchQueue.main.async {
+                weakSelf.removeActivityIndicator()
+                weakSelf.searchedMovies = popularMovies.results
+                weakSelf.movieGridCollectionView.reloadData()
+                weakSelf.hideNextPreviousButton()
+                weakSelf.searchTextField.resignFirstResponder()
+            }
         }
         
+        moviesHomeScreenViewModel.searchMoviesFailureCallBack = { [weak self] in
+            guard let weakSelf = self else {return}
+            DispatchQueue.main.async {
+                weakSelf.removeActivityIndicator()
+            }
+        }
+    }
+    
+    private func operateServerData() {
+        guard  let unwrappedPopularMovies = popularMovies else {return}
+        switch selectedSortFilter {
+        case .kPopularity:
+            operatedPopularMovies = moviesHomeScreenViewModel.getMoviesSortedByPopularity(moviesArray: unwrappedPopularMovies.results)
+        case .kRating:
+            operatedPopularMovies = moviesHomeScreenViewModel.getMoviesSortedByRating(moviesArray: unwrappedPopularMovies.results)
+        case .kNone:
+            operatedPopularMovies = unwrappedPopularMovies.results
+        }
+        movieGridCollectionView.reloadData()
     }
     
     private func scrollToFirstCell() {
@@ -81,7 +135,7 @@ class MoviesHomeScreenController: UIViewController {
     }
     
     private func showNextPreviousButton() {
-        UIView.animate(withDuration: 0.25, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.previousButton.alpha                   = 1.0
             self.nextButton.alpha                       = 1.0
             self.previousShadowView.layer.shadowOpacity = 1.0
@@ -89,6 +143,19 @@ class MoviesHomeScreenController: UIViewController {
         }) { (success) in
             
         }
+    }
+    
+    private func addActivityIndicator() {
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        view.isUserInteractionEnabled = false
+    }
+    
+    private func removeActivityIndicator() {
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+        view.isUserInteractionEnabled = true
     }
     
     @IBAction func previousButtonAction(_ sender: UIButton) {
@@ -105,11 +172,40 @@ class MoviesHomeScreenController: UIViewController {
     
     @IBAction func openSortViewButtonAction(_ sender: UIButton) {
         let customPopUpView = CustomFilterPopUpView(frame: view.frame)
+        customPopUpView.selectedSortFilter = selectedSortFilter
         view.addSubview(customPopUpView)
+        
+        customPopUpView.selectedFilterCallback = { [weak self] selectedFilter in
+            guard let weakSelf = self else {return}
+            weakSelf.selectedSortFilter = selectedFilter
+            weakSelf.operateServerData()
+            weakSelf.scrollToFirstCell()
+        }
     }
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        
+        if sender.tag == 101 {
+            sender.tag = 102
+            animateSearchHeightConstraint(constant: 50.0)
+            searchTextField.becomeFirstResponder()
+            searchButton.setImage(UIImage(named: "close"), for: .normal)
+        } else {
+            sender.tag           = 101
+            isSearchOn           = false
+            searchTextField.text = ""
+            animateSearchHeightConstraint(constant: 0.0)
+            searchTextField.resignFirstResponder()
+            movieGridCollectionView.reloadData()
+            showNextPreviousButton()
+            searchButton.setImage(UIImage(named: "search"), for: .normal)
+        }
+    }
+    
+    private func animateSearchHeightConstraint(constant: CGFloat) {
+        heightConstraintSearchContainer.constant = constant
+        UIView.animate(withDuration: 0.25, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.2, options: [.curveEaseIn, .allowUserInteraction], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     private func navigateToMovieDetails(movieDetails: PopularMoviesResult) {
@@ -125,11 +221,13 @@ extension MoviesHomeScreenController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        showNextPreviousButton()
+        if !isSearchOn {
+            showNextPreviousButton()
+        }
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if (!decelerate) {
+        if !decelerate && !isSearchOn  {
             showNextPreviousButton()
         }
     }
@@ -153,9 +251,7 @@ extension MoviesHomeScreenController: UICollectionViewDelegate {
             UIView.animate(withDuration: 0.25, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.1, options: [.curveEaseIn, .allowUserInteraction], animations: {
                 cell.transform = .identity
             }, completion: { (success) in
-                if let popularMoviesDictionary = self.popularMovies  {
-                    self.navigateToMovieDetails(movieDetails: popularMoviesDictionary.results[indexPath.item])
-                }
+                self.navigateToMovieDetails(movieDetails: ( self.isSearchOn ? (self.searchedMovies[indexPath.item]) : (self.operatedPopularMovies[indexPath.item])  ))
             })
         }
     }
@@ -164,16 +260,18 @@ extension MoviesHomeScreenController: UICollectionViewDelegate {
 extension MoviesHomeScreenController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let popularMoviesDictionary = popularMovies  {
-            return popularMoviesDictionary.results.count
+        if isSearchOn {
+            return searchedMovies.count
         }
-        return 0
+        return operatedPopularMovies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesHomeScreenCollectionCell", for: indexPath) as! MoviesHomeScreenCollectionCell
-        if let popularMoviesDictionary = popularMovies  {
-            cell.popularMovie = popularMoviesDictionary.results[indexPath.item]
+        let cell          = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesHomeScreenCollectionCell", for: indexPath) as! MoviesHomeScreenCollectionCell
+        if isSearchOn {
+            cell.popularMovie = searchedMovies[indexPath.item]
+        } else {
+            cell.popularMovie = operatedPopularMovies[indexPath.item]
         }
         return cell
     }
@@ -185,5 +283,21 @@ extension MoviesHomeScreenController: UICollectionViewDelegateFlowLayout {
         let height = collectionView.bounds.height/3
         
         return CGSize(width: width, height: height)
+    }
+}
+
+extension MoviesHomeScreenController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let searchText = textField.text else {return false}
+        let trimmedString    = searchText.trimmingCharacters(in: .whitespaces)
+        if !trimmedString.isEmpty {
+            callSearchAPI(searchText: searchText)
+        }
+        view.endEditing(true)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.endEditing(true)
     }
 }

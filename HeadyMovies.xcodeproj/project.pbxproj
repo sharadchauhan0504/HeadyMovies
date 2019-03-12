@@ -23,7 +23,7 @@
 		D0E76B7A222F9339001456A3 /* MoviesHomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */; };
 		D0E76B7E222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B7C222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift */; };
 		D0E76B7F222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E76B7D222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib */; };
-		D0E76B84222FE675001456A3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B83222FE675001456A3 /* Configuration.swift */; };
+		D0E76B84222FE675001456A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B83222FE675001456A3 /* Constants.swift */; };
 		D0E76B86222FEBA6001456A3 /* NetworkOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B85222FEBA6001456A3 /* NetworkOperations.swift */; };
 		D0E76B88222FEBCE001456A3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E76B87222FEBCE001456A3 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -68,7 +68,7 @@
 		D0E76B79222F9339001456A3 /* MoviesHomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesHomeScreenController.swift; sourceTree = "<group>"; };
 		D0E76B7C222FD888001456A3 /* MoviesHomeScreenCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesHomeScreenCollectionCell.swift; sourceTree = "<group>"; };
 		D0E76B7D222FD888001456A3 /* MoviesHomeScreenCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesHomeScreenCollectionCell.xib; sourceTree = "<group>"; };
-		D0E76B83222FE675001456A3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D0E76B83222FE675001456A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D0E76B85222FEBA6001456A3 /* NetworkOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperations.swift; sourceTree = "<group>"; };
 		D0E76B87222FEBCE001456A3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,7 +252,7 @@
 		D0E76B82222FE659001456A3 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				D0E76B83222FE675001456A3 /* Configuration.swift */,
+				D0E76B83222FE675001456A3 /* Constants.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				D0E76B86222FEBA6001456A3 /* NetworkOperations.swift in Sources */,
 				D03893B022362A8100FE1D32 /* MovieDetailScreenController.swift in Sources */,
 				D0066B9E222EA7EA00B62F9E /* AppDelegate.swift in Sources */,
-				D0E76B84222FE675001456A3 /* Configuration.swift in Sources */,
+				D0E76B84222FE675001456A3 /* Constants.swift in Sources */,
 				D0DB068E223131AD0040AB16 /* PopularMoviesCodable.swift in Sources */,
 				D0E76B88222FEBCE001456A3 /* UIViewExtensions.swift in Sources */,
 				D03893BB22367D2E00FE1D32 /* ImageDownloader.swift in Sources */,

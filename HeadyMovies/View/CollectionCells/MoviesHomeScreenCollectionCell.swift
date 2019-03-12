@@ -35,8 +35,7 @@ class MoviesHomeScreenCollectionCell: UICollectionViewCell {
     
     private func setCellData() {
         guard let popularMovieData = popularMovie else {return}
-        let imageUrlString = "\(IMAGE_BASE_URL)/w200\(popularMovieData.posterPath)"
-        if let imageUrl = URL(string: imageUrlString) {
+        if let posterPath = popularMovieData.posterPath, let imageUrl = URL(string: "\(IMAGE_BASE_URL)/w200\(posterPath)") {
             movieCoverImageView.downloadImageFrom(url: imageUrl, imageMode: .scaleAspectFill)
         }
         

@@ -45,8 +45,7 @@ class MovieDetailScreenController: UIViewController {
 
     private func initialSetup() {
         guard let movieDetail = movieDetails else {return}
-        let imageUrlString = "\(IMAGE_BASE_URL)/w500\(movieDetail.backDropPath)"
-        if let imageUrl = URL(string: imageUrlString) {
+        if let backDropPath = movieDetail.backDropPath, let imageUrl = URL(string: "\(IMAGE_BASE_URL)/w500\(backDropPath)") {
             moviePosterImageView.downloadImageFrom(url: imageUrl, imageMode: .scaleAspectFill)
         }
         movieTitleLabel.text  = movieDetail.title

@@ -13,7 +13,7 @@ class NetworkOperations {
     let urlSession = URLSession(configuration: .default)
     
     var popularMoviesResponseCallback: ((Data, Bool) -> Void)?
-
+    var searchMoviesResponseCallback: ((Data, Bool) -> Void)?
     
     func fetchPopularMovies(pageNumber: Int) {
         
@@ -25,6 +25,22 @@ class NetworkOperations {
             if error != nil, let callback = weakSelf.popularMoviesResponseCallback {
                 callback(Data(), false)
             } else if let data = responseData, let callback = weakSelf.popularMoviesResponseCallback {
+                callback(data, true)
+            }
+        }
+        dataTask.resume()
+    }
+    
+    func searchMovie(searchString: String) {
+        
+        let urlString = "\(BASE_URL)/search/movie?api_key=\(API_KEY)&query=\(searchString)"
+        guard let url = URL(string: urlString) else {return}
+        
+        let dataTask = urlSession.dataTask(with: url) { [weak self] (responseData, response, error) in
+            guard let weakSelf = self else {return}
+            if error != nil, let callback = weakSelf.searchMoviesResponseCallback {
+                callback(Data(), false)
+            } else if let data = responseData, let callback = weakSelf.searchMoviesResponseCallback {
                 callback(data, true)
             }
         }

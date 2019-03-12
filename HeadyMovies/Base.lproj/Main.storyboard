@@ -28,11 +28,12 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="15" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWv-f8-WBb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWv-f8-WBb">
                                                 <rect key="frame" x="15" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bWv-f8-WBb" secondAttribute="height" multiplier="1:1" id="ktV-B9-MT9"/>
                                                 </constraints>
+                                                <state key="normal" image="funnel"/>
                                                 <connections>
                                                     <action selector="openSortViewButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JN5-JS-3m3"/>
                                                 </connections>
@@ -43,11 +44,12 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6U-68-TQ0">
+                                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6U-68-TQ0">
                                                 <rect key="frame" x="310" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="g6U-68-TQ0" secondAttribute="height" multiplier="1:1" id="773-5n-4W6"/>
                                                 </constraints>
+                                                <state key="normal" image="search"/>
                                                 <connections>
                                                     <action selector="searchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXH-VH-sSw"/>
                                                 </connections>
@@ -87,13 +89,6 @@
                                             <constraint firstAttribute="bottom" secondItem="bWv-f8-WBb" secondAttribute="bottom" id="xRK-aT-Nyx"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-Bb-90q" userLabel="Search Field Container View">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="0.0"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" id="f0O-9f-X7g"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCX-8s-bRp" userLabel="Collection View Container">
                                         <rect key="frame" x="0.0" y="50" width="375" height="684"/>
                                         <subviews>
@@ -119,6 +114,26 @@
                                             <constraint firstItem="S4B-Ly-pWV" firstAttribute="leading" secondItem="PCX-8s-bRp" secondAttribute="leading" id="Xnf-uv-GFi"/>
                                             <constraint firstItem="S4B-Ly-pWV" firstAttribute="top" secondItem="PCX-8s-bRp" secondAttribute="top" id="kYg-9w-0gn"/>
                                             <constraint firstAttribute="bottom" secondItem="S4B-Ly-pWV" secondAttribute="bottom" id="ung-qL-HFK"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-Bb-90q" userLabel="Search Field Container View">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="0.0"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter movie name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52o-Jp-VT6">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="52o-Jp-VT6" firstAttribute="centerX" secondItem="1UM-Bb-90q" secondAttribute="centerX" id="3fz-wH-5UN"/>
+                                            <constraint firstItem="52o-Jp-VT6" firstAttribute="height" secondItem="1UM-Bb-90q" secondAttribute="height" id="3za-uc-2gR"/>
+                                            <constraint firstAttribute="height" id="f0O-9f-X7g"/>
+                                            <constraint firstItem="52o-Jp-VT6" firstAttribute="centerY" secondItem="1UM-Bb-90q" secondAttribute="centerY" id="seT-GY-zH5"/>
+                                            <constraint firstItem="52o-Jp-VT6" firstAttribute="width" secondItem="1UM-Bb-90q" secondAttribute="width" id="x6t-rf-TMZ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaX-ZH-h4X">
@@ -154,6 +169,7 @@
                                     <constraint firstItem="zai-v6-4F8" firstAttribute="width" secondItem="6Ze-Kj-Jj2" secondAttribute="width" id="5cQ-Qv-T6g"/>
                                     <constraint firstAttribute="trailing" secondItem="PCX-8s-bRp" secondAttribute="trailing" id="5hL-Vq-ALP"/>
                                     <constraint firstItem="1UM-Bb-90q" firstAttribute="leading" secondItem="UPV-dV-jH0" secondAttribute="leading" id="COw-l6-4jj"/>
+                                    <constraint firstItem="PCX-8s-bRp" firstAttribute="top" secondItem="1UM-Bb-90q" secondAttribute="bottom" id="EG0-io-BRU"/>
                                     <constraint firstItem="ps0-4B-lsg" firstAttribute="top" secondItem="UPV-dV-jH0" secondAttribute="top" id="EN5-0b-mTF"/>
                                     <constraint firstItem="zai-v6-4F8" firstAttribute="height" secondItem="6Ze-Kj-Jj2" secondAttribute="height" id="IyZ-EO-Qi2"/>
                                     <constraint firstItem="SHx-Jw-Rr1" firstAttribute="centerY" secondItem="zai-v6-4F8" secondAttribute="centerY" id="Jxw-ka-2bi"/>
@@ -169,7 +185,6 @@
                                     <constraint firstItem="oaX-ZH-h4X" firstAttribute="centerY" secondItem="6Ze-Kj-Jj2" secondAttribute="centerY" id="b45-yr-FqN"/>
                                     <constraint firstItem="SHx-Jw-Rr1" firstAttribute="height" secondItem="zai-v6-4F8" secondAttribute="height" id="bJy-fV-4ow"/>
                                     <constraint firstItem="ps0-4B-lsg" firstAttribute="height" secondItem="UPV-dV-jH0" secondAttribute="height" multiplier="50:734" id="bdY-4j-wbj"/>
-                                    <constraint firstItem="PCX-8s-bRp" firstAttribute="top" secondItem="1UM-Bb-90q" secondAttribute="bottom" id="lAP-2h-MkI"/>
                                     <constraint firstItem="oaX-ZH-h4X" firstAttribute="centerX" secondItem="6Ze-Kj-Jj2" secondAttribute="centerX" id="n9A-zW-sbt"/>
                                     <constraint firstItem="oaX-ZH-h4X" firstAttribute="height" secondItem="6Ze-Kj-Jj2" secondAttribute="height" id="nRq-Op-1tH"/>
                                     <constraint firstItem="ps0-4B-lsg" firstAttribute="leading" secondItem="UPV-dV-jH0" secondAttribute="leading" id="shQ-Hb-df6"/>
@@ -188,11 +203,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="heightConstraintSearchContainer" destination="f0O-9f-X7g" id="dEh-Vq-qCm"/>
                         <outlet property="movieGridCollectionView" destination="S4B-Ly-pWV" id="ifV-ch-E38"/>
                         <outlet property="nextButton" destination="zai-v6-4F8" id="NjN-Gn-ZjO"/>
                         <outlet property="nextShadowView" destination="SHx-Jw-Rr1" id="Eyh-fe-YWi"/>
                         <outlet property="previousButton" destination="6Ze-Kj-Jj2" id="2q6-xn-FTW"/>
                         <outlet property="previousShadowView" destination="oaX-ZH-h4X" id="UtB-I8-77K"/>
+                        <outlet property="searchButton" destination="g6U-68-TQ0" id="bc9-sd-Uhj"/>
+                        <outlet property="searchTextField" destination="52o-Jp-VT6" id="fF4-zX-x6O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -296,8 +314,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzI-Xa-7i6" userLabel="Release Date &amp; Stars">
                                                 <rect key="frame" x="5" y="54" width="340" height="25"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuH-hx-21E">
-                                                        <rect key="frame" x="0.0" y="2.3333333333333144" width="36.666666666666664" height="20.666666666666668"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuH-hx-21E">
+                                                        <rect key="frame" x="0.0" y="2.3333333333333144" width="170" height="20.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -365,6 +383,7 @@
                                                 <constraints>
                                                     <constraint firstItem="kuH-hx-21E" firstAttribute="centerY" secondItem="RzI-Xa-7i6" secondAttribute="centerY" id="5c2-lW-xPk"/>
                                                     <constraint firstItem="kvS-fn-fBA" firstAttribute="width" secondItem="RzI-Xa-7i6" secondAttribute="width" multiplier="1:2" id="IS9-TH-FPI"/>
+                                                    <constraint firstItem="kvS-fn-fBA" firstAttribute="leading" secondItem="kuH-hx-21E" secondAttribute="trailing" id="Kn8-be-jdT"/>
                                                     <constraint firstItem="kuH-hx-21E" firstAttribute="leading" secondItem="RzI-Xa-7i6" secondAttribute="leading" id="fQ3-jO-RCG"/>
                                                     <constraint firstItem="kvS-fn-fBA" firstAttribute="top" secondItem="RzI-Xa-7i6" secondAttribute="top" id="ggD-8C-Y7y"/>
                                                     <constraint firstAttribute="trailing" secondItem="kvS-fn-fBA" secondAttribute="trailing" id="nro-F3-7af"/>
@@ -459,7 +478,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="funnel" width="48" height="48"/>
         <image name="left" width="51.200000762939453" height="51.200000762939453"/>
         <image name="right" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="search" width="48" height="48"/>
     </resources>
 </document>

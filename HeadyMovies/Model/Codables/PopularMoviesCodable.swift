@@ -29,10 +29,10 @@ struct PopularMoviesResult: Codable {
     let voteAverage: Double
     let title: String
     let popularity: Double
-    let posterPath: String
+    let posterPath: String?
     let overview: String
     let releaseDate: String
-    let backDropPath: String
+    let backDropPath: String?
     
     private enum CodingKeys: String, CodingKey {
         case voteCount = "vote_count"
