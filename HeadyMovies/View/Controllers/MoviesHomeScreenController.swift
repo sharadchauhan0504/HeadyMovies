@@ -58,7 +58,8 @@ class MoviesHomeScreenController: UIViewController {
         nextButton.layer.masksToBounds       = true
         nextShadowView.addShadowToView(radius: nextButton.bounds.width * 0.5)
         
-        hideNextPreviousButton()
+        hideNextPreviousButton(button: previousButton)
+        hideNextPreviousButton(button: nextButton)
     }
     
     private func callPopularMoviesAPI(pageCount: Int) {
@@ -71,7 +72,7 @@ class MoviesHomeScreenController: UIViewController {
                 weakSelf.removeActivityIndicator()
                 weakSelf.popularMovies = popularMovies
                 weakSelf.operateServerData()
-                weakSelf.showNextPreviousButton()
+                weakSelf.manageNextPreviousButtons()
             }
         }
         
@@ -95,7 +96,8 @@ class MoviesHomeScreenController: UIViewController {
                 weakSelf.removeActivityIndicator()
                 weakSelf.searchedMovies = popularMovies.results
                 weakSelf.movieGridCollectionView.reloadData()
-                weakSelf.hideNextPreviousButton()
+                weakSelf.hideNextPreviousButton(button: weakSelf.previousButton)
+                weakSelf.hideNextPreviousButton(button: weakSelf.nextButton)
                 weakSelf.searchTextField.resignFirstResponder()
             }
         }
@@ -121,25 +123,28 @@ class MoviesHomeScreenController: UIViewController {
         movieGridCollectionView.reloadData()
     }
     
+    private func manageNextPreviousButtons() {
+        guard let movieData = popularMovies else {return}
+        currentPageCount == movieData.totalPages ? (hideNextPreviousButton(button: nextButton)) : (showNextPreviousButton(button: nextButton))
+        currentPageCount <= 1 ? (hideNextPreviousButton(button: previousButton)) : (showNextPreviousButton(button: previousButton))
+    }
+    
+    
     private func scrollToFirstCell() {
         let indexPath = IndexPath(item: 0, section: 0)
         movieGridCollectionView.scrollToItem(at: indexPath, at: .top, animated: false)
         visibleIndexPaths = [IndexPath]()
     }
     
-    private func hideNextPreviousButton() {
-        previousButton.alpha                   = 0.0
-        previousShadowView.removeShadow()
-        nextButton.alpha                       = 0.0
-        nextShadowView.layer.shadowOpacity     = 0.0
+    private func hideNextPreviousButton(button: UIButton) {
+        button.alpha                   = 0.0
+        button.removeShadow()
     }
     
-    private func showNextPreviousButton() {
+    private func showNextPreviousButton(button: UIButton) {
         UIView.animate(withDuration: 0.2, animations: {
-            self.previousButton.alpha                   = 1.0
-            self.nextButton.alpha                       = 1.0
-            self.previousShadowView.layer.shadowOpacity = 1.0
-            self.nextShadowView.layer.shadowOpacity     = 1.0
+            button.alpha                   = 1.0
+            button.addBackShadow()
         }) { (success) in
             
         }
@@ -196,7 +201,8 @@ class MoviesHomeScreenController: UIViewController {
             animateSearchHeightConstraint(constant: 0.0)
             searchTextField.resignFirstResponder()
             movieGridCollectionView.reloadData()
-            showNextPreviousButton()
+            showNextPreviousButton(button: previousButton)
+            showNextPreviousButton(button: nextButton)
             searchButton.setImage(UIImage(named: "search"), for: .normal)
         }
     }
@@ -217,18 +223,21 @@ class MoviesHomeScreenController: UIViewController {
 
 extension MoviesHomeScreenController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        hideNextPreviousButton()
+        hideNextPreviousButton(button: previousButton)
+        hideNextPreviousButton(button: nextButton)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if !isSearchOn {
-            showNextPreviousButton()
+            showNextPreviousButton(button: previousButton)
+            showNextPreviousButton(button: nextButton)
         }
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate && !isSearchOn  {
-            showNextPreviousButton()
+            showNextPreviousButton(button: previousButton)
+            showNextPreviousButton(button: nextButton)
         }
     }
 }

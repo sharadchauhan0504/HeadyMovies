@@ -37,4 +37,8 @@ extension UIView {
     func removeShadow() {
         layer.shadowOpacity = 0.0
     }
+    
+    func addBackShadow() {
+        layer.shadowOpacity = 1.0
+    }
 }
